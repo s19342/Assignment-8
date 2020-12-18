@@ -6,9 +6,9 @@ router.post("/", (req, res) => {
 
     if(!songName || !album || !releaseYear){
         res.status(400).send('Please input songName, album and releaseYear as json');
+    }else{
+        res.render("jsonresponse", {songName, album, releaseYear});
     }
-
-    res.render("jsonresponse", {songName, album, releaseYear});
 });
   
 module.exports = router;
